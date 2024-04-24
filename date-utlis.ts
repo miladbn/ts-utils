@@ -34,3 +34,8 @@ export const gregorianToJalaliOnlyTime = (gregorian: Date | string): string => {
   }-${gregorian.getDate()} ${gregorian.getHours()}:${gregorian.getMinutes()}:${gregorian.getSeconds()}`
   return moment(`${gregorian}`, 'YYYY-MM-DD HH:mm:ss').format('HH:mm')
 }
+
+export const addDays = (date: Date, days: number): Date => {
+  date.setDate(date.getDate() + days)
+  return date
+}
