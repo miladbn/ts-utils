@@ -46,3 +46,16 @@ export function extractTime(isoString: string) {
 
   return `${hours}:${minutes}`
 }
+export function getPersianMonthData(dateTime: string) {
+  const d = new Date(gregorianToJalali(dateTime))
+
+  const month: string = new Intl.DateTimeFormat('fa-IR-u-nu-latn', {
+    month: 'short'
+  }).format(d)
+
+  const day: string = new Intl.DateTimeFormat('fa-IR-u-nu-latn', {
+    day: '2-digit'
+  }).format(d)
+
+  return { day, month }
+}
