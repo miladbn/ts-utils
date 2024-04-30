@@ -59,3 +59,7 @@ export function getPersianMonthData(dateTime: string) {
 
   return { day, month }
 }
+export const addHours = (date: Date, hours: number): Date => {
+  date.setHours(date.getHours() + hours)
+  return date
+}
